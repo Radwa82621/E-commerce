@@ -1,0 +1,77 @@
+<section id="register">
+    <div class="container w-75 mx-auto">
+        <div class="head">
+            <h2 class=" mt-5 mb-3">Register now:</h2>
+        </div>
+        <div class="body">
+            <div *ngIf="apiErreor" class="alert alert-danger">
+               {{apiErreor}} 
+            </div>
+            <form action="submit" [formGroup]="register" (ngSubmit)="registerData()">
+
+                <div class="form-group mt-0 mb-3">
+                    <label for="name"> Name :</label>
+                    <input type="text" id="name" class="form-control" formControlName="name">
+                    <!-- <p>{{register.get('name')?.errors |json}}</p> -->
+
+                    <div *ngIf="register.get('name')?.errors &&register.get('name')?.touched" class="alert alert-danger">
+                        <p *ngIf="register.get('name')?.getError('required') " class="mb-0">Name is required</p>
+                        <p *ngIf="register.get('name')?.getError('minlength') " class="mb-0">Name minimum lenght is 3</p>
+                        <p *ngIf="register.get('name')?.getError('maxlength') " class="mb-0">Name maximum lenght is 8</p>
+
+                    </div>
+                </div>
+                <div class="form-group my-3">
+                    <label for="email"> E-mail :</label>
+                    <input type="email" id="email" class="form-control" formControlName="email">
+                
+                    <div *ngIf="register.get('email')?.errors &&register.get('email')?.touched" class="alert alert-danger">
+                        <p *ngIf="register.get('email')?.getError('required') " class="mb-0">E-mail is required</p>
+                        <p *ngIf="register.get('email')?.getError('email') " class="mb-0">E-mail invalid</p>
+
+                    </div>
+                </div> 
+                
+                
+                <div class="form-group my-3">
+                    <label for="password"> Password :</label>
+                    <input type="password" id="password" class="form-control" formControlName="password">
+                
+                    <div *ngIf="register.get('password')?.errors &&register.get('password')?.touched" class="alert alert-danger">
+                        <p *ngIf="register.get('password')?.getError('required') " class="mb-0">password is required</p>
+                        <p *ngIf="register.get('password')?.getError('pattern') " class="mb-0">password pattern invalid</p>
+
+                    </div> 
+                </div> 
+                <div class="form-group my-3">
+                    <label for="rePassword"> Repassword :</label>
+                    <input type="password" id="rePassword" class="form-control " formControlName="rePassword">
+               
+                    <div *ngIf="register.get('rePassword')?.errors &&register.get('rePassword')?.touched" class="alert alert-danger">
+                        <p *ngIf="register.get('rePassword')?.getError('required') " class="mb-0">Repassword is required</p>
+                        <p *ngIf="register.get('rePassword')?.getError('pattern') " class="mb-0">Repassword pattern invalid</p>
+
+                    </div> 
+               
+                </div>
+                <div class="form-group my-3">
+                    <label for="phone">Phone :</label>
+                    <input type="tel" id="phone" class="form-control" formControlName="phone">
+               
+                    <div *ngIf="register.get('phone')?.errors &&register.get('phone')?.touched" class="alert alert-danger">
+                        <p *ngIf="register.get('phone')?.getError('required') " class="mb-0">phone is required</p>
+                        <p *ngIf="register.get('phone')?.getError('pattern') " class="mb-0">phone pattern invalid</p>
+
+                    </div> 
+                </div>
+                <div class="foot">
+                    <button [disabled]="register.invalid" class="btn btn-lg d-block ms-auto">
+                        <i *ngIf="isLoading" class="fa fa-spinner fa-spin"></i>
+                       <span *ngIf="!isLoading">Register</span> </button>
+                </div>
+            </form> 
+        </div>
+        
+    
+    </div>
+</section>

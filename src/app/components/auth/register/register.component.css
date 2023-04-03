@@ -1,0 +1,18 @@
+.body label{
+    cursor: pointer;
+    margin-bottom: .3em;
+   
+}
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #22db1491 !important;
+    box-shadow: 0 0 0 0.25rem #22db1491 !important ;}
+.foot button{
+    background-color: #22db14;
+    color: white;
+    transition: all .3s;
+}
+.foot button:hover{
+filter: brightness(.9);
+}
