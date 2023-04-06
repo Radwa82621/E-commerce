@@ -14,7 +14,11 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductsComponent } from './components/products/products.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { BrandsComponent } from './components/brands/brands.component';
-
+import { FeateredProductsComponent } from './featered-products/featered-products.component';
+import { ProductItemComponent } from './product-item/product-item.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import{BrowserAnimationsModule} from  '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,13 +30,18 @@ import { BrandsComponent } from './components/brands/brands.component';
     CartComponent,
     ProductsComponent,
     CategoriesComponent,
-    BrandsComponent
+    BrandsComponent,
+    FeateredProductsComponent,
+    ProductItemComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

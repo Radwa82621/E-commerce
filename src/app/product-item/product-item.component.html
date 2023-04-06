@@ -1,0 +1,17 @@
+<div class="product p-2  overflow-hidden">
+    <a [routerLink]="['/productDetails',product.id]" class="text-decoration-none ">
+    <img [src]="product.imageCover" alt="" class="w-100">
+    <p>{{product.category.name}}</p>
+<h2 class="h6">{{product.title.split(" ").splice(0,2).join(" ")}}</h2>
+<div class="d-flex justify-content-between">
+     <span>{{product.price}}EGP</span>
+     <div class="rating">
+        <i class="fa fa-star"></i>
+        <span>{{product.ratingsAverage}}</span>
+     </div>
+</div>
+</a>
+<button class="w-100 btn mt-4"> + Add</button>
+</div>
+
+<!-- [routerLink]="['/ProductDetails',Product.title]" -->

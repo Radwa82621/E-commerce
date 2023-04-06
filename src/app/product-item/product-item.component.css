@@ -1,0 +1,28 @@
+button {
+    background-color: #22db14;
+    color: white;
+    transition: all .5s;
+    transform: translateY(300px);
+    opacity: 0;
+}
+
+button:hover {
+    background-color: #22db14;
+    filter: brightness(.9);
+    color: white;
+
+}
+.product{
+   transition:all .5s;
+   cursor: pointer;
+}
+.product:hover{
+   box-shadow: #21db146c 2px !important;
+}
+.product:hover button{
+   transform: translateY(0px);
+   opacity:1;
+}
+a{
+    color: inherit;
+}

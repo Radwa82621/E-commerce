@@ -8,6 +8,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { BrandsComponent } from './components/brands/brands.component';
 import { AuthGuard } from './auth.guard';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
   {path:"",component:RegisterComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:"cart", canActivate:[AuthGuard],component:CartComponent},
   {path:"products",canActivate:[AuthGuard],component:ProductsComponent},
   {path:"categories",canActivate:[AuthGuard],component:CategoriesComponent},
-  {path:"brands",canActivate:[AuthGuard],component:BrandsComponent}
+  {path:"brands",canActivate:[AuthGuard],component:BrandsComponent},
+  {path:"productDetails/:id",canActivate:[AuthGuard],component:ProductDetailsComponent},
 
 
 
