@@ -1,0 +1,29 @@
+<div class="container py-5 my-5 p-5 bg-light rounded " *ngIf="cartDetails">
+    <h2>Cart Shop</h2>
+    <div class="d-flex justify-content-between align-items-center">
+        <h5>total price: <span class="green">{{cartDetails.data.totalCartPrice}}</span></h5>
+        <h5>total number of items: <span class="green">{{cartDetails.numOfCartItems}}</span></h5>
+
+    </div>
+    <div class="row border-bottom my-3 d-flex align-items-center p-2" *ngFor="let product of cartDetails.data.products |filterCart">
+        <div class="col-md-2">
+            <img [src]="product.product.imageCover" class="w-100" alt="">
+        </div>
+        <div class="col-md-10 d-flex justify-content-between">
+           <div>
+            <h5>{{product.product.title}}</h5>
+            <h6>{{product.price}} EGP</h6>
+            <button class="btn btn-sm m-0 p-0 text-danger" (click)="deleteItem(product.product.id)"> <i class="fa fa-trash"></i> Remove</button>
+           </div>
+            <div>
+                <button class="btn btn-count btn-md" (click)="updateCart(product.product.id,product.count+1)">+</button>
+                <span class="mx-3">{{product.count}}</span>
+                <button class="btn btn-count btn-md" (click)="updateCart(product.product.id,product.count-1)">-</button>
+            </div>
+        </div>
+      
+    </div>
+
+
+    <button class="btn-count btn btn-lg d-block mx-auto" (click)="clearCart()"> Clear Your Cart</button>
+</div>

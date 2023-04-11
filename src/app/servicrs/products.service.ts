@@ -10,6 +10,9 @@ export class ProductsService {
 getProducts():Observable<any> {
 return this._httpClient.get("https://route-ecommerce.onrender.com/api/v1/products")
 }
+getCategories():Observable<any> {
+  return this._httpClient.get("https://route-ecommerce.onrender.com/api/v1/categories")
+  }
 getProductById(id:string):Observable<any> {
   return this._httpClient.get(`https://route-ecommerce.onrender.com/api/v1/products/${id}`)
   }

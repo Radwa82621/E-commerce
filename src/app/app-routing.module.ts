@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/auth/login/login.component';
-import { CartComponent } from './components/cart/cart.component';
 import { ProductsComponent } from './components/products/products.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { BrandsComponent } from './components/brands/brands.component';
@@ -15,11 +14,12 @@ const routes: Routes = [
   {path:"register",component:RegisterComponent},
   {path:"login",component:LoginComponent},
   {path:"home",canActivate:[AuthGuard],component:HomeComponent},
-  {path:"cart", canActivate:[AuthGuard],component:CartComponent},
   {path:"products",canActivate:[AuthGuard],component:ProductsComponent},
   {path:"categories",canActivate:[AuthGuard],component:CategoriesComponent},
   {path:"brands",canActivate:[AuthGuard],component:BrandsComponent},
   {path:"productDetails/:id",canActivate:[AuthGuard],component:ProductDetailsComponent},
+  {path:"Settings",loadChildren:()=>import('../settings/settings.module').then((x)=>x.SettingsModule)},
+  {path:"cart",loadChildren:()=>import('../cart/cart.module').then((c)=>c.CartModule)}
 
 
 

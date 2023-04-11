@@ -9,6 +9,7 @@ import { Product } from '../interface/product';
 })
 export class FeateredProductsComponent implements OnInit {
   allProducts:Product[]=[]
+  searchTearm:string=''
 constructor(private _productService:ProductsService){
 
 }

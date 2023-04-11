@@ -8,9 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { LoginComponent } from './components/auth/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CartComponent } from './components/cart/cart.component';
 import { ProductsComponent } from './components/products/products.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { BrandsComponent } from './components/brands/brands.component';
@@ -19,6 +18,9 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import{BrowserAnimationsModule} from  '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MainSliderComponent } from './components/main-slider/main-slider.component';
+import { ConcatPipe } from './components/concat.pipe';
+import { SearchPipe } from './components/search.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,13 +29,15 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     HomeComponent,
     RegisterComponent,
     LoginComponent,
-    CartComponent,
     ProductsComponent,
     CategoriesComponent,
     BrandsComponent,
     FeateredProductsComponent,
     ProductItemComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    MainSliderComponent,
+    ConcatPipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
